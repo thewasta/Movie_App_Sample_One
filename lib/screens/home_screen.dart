@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: kBackgroundColor,
       body: Stack(
         children: <Widget>[
-          const SafeArea(
+          SafeArea(
             child: SingleChildScrollView(
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.vertical,
@@ -18,18 +18,45 @@ class HomeScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Padding(
-                    padding: EdgeInsets.symmetric(
+                    padding: const EdgeInsets.symmetric(
                       vertical: 10,
                       horizontal: 30,
                     ),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        Text(
+                        const Text(
                           "Hi, Melanie!",
                           style: TextStyle(
                             fontSize: 30,
                           ),
                         ),
+                        Stack(
+                          children: <Widget>[
+                            Container(
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                image: const DecorationImage(
+                                    image: NetworkImage(
+                                        "https://i.pravatar.cc/150?img=5"),
+                                    fit: BoxFit.cover),
+                              ),
+                            ),
+                            Positioned(
+                                top: 2,
+                                right: 2,
+                                child: Container(
+                                  height: 10,
+                                  width: 10,
+                                  decoration: const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: kButtonColor,
+                                  ),
+                                ))
+                          ],
+                        )
                       ],
                     ),
                   ),
