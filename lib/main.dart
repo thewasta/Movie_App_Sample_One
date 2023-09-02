@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app_design/config/app_theme.dart';
+import 'package:movie_app_design/screens/screens.dart';
 
 void main() => runApp(MyApp());
 
@@ -6,17 +8,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Material App Bar'),
-        ),
-        body: Center(
-          child: Container(
-            child: Text('Hello World'),
-          ),
-        ),
-      ),
+      theme: AppTheme.theme,
+      debugShowCheckedModeBanner: false,
+      home: const HomeScreen(),
     );
   }
 }
