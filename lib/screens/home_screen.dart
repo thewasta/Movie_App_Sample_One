@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:movie_app_design/utils/constants.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -60,6 +61,55 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  // Search bar
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 30,
+                    ),
+                    child: Container(
+                      padding: const EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: kSearchBarColor,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: const Row(
+                        children: <Widget>[
+                          Icon(
+                            FontAwesomeIcons.magnifyingGlass,
+                            color: Colors.white30,
+                          ),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          Text(
+                            "Search",
+                            style:
+                                TextStyle(fontSize: 18, color: Colors.white30),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 30,
+                      vertical: 5,
+                    ),
+                    child: Text(
+                      "For you",
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                            color: Colors.white54,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w300,
+                          ),
+                    ),
+                  )
                 ],
               ),
             ),
